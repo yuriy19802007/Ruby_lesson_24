@@ -9,7 +9,7 @@ get '/' do
 end
 
 get '/about' do
-
+    
 	erb :about
 end
 
@@ -45,9 +45,16 @@ post '/visit' do
 	@choice_barber = params[:choice_barber]
 	@color = params[:color]
 
+	if @user_name == ''
+		@error = 'Enter your name'
+		return erb :visit
+	end
 	f = File.open './public/users.txt', 'a'
 	f.write "name : #{@user_name}; phone : #{@user_phone}; date : #{@date_time} \nChoose barber is #{@choice_barber},\nColor : #{@color}"
 	f.close
+
+	erb "name : #{@user_name}; phone : #{@user_phone}; date : #{@date_time} \nChoose barber is #{@choice_barber},\nColor : #{@color}"
+	
 
 end
 
