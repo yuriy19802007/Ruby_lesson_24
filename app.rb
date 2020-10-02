@@ -51,16 +51,12 @@ post '/visit' do
 	}
 
 	# for every pair key value
+	@error = hh.select {|key,_| params[key] == ""}.values.join(", ")
 	
-	hh.each do |key, value|
-		# if params is empty then error 
-		if params[key] == ''
-			@error = hh[key]
-		
-		    return erb :visit
-		end
+	if @error != ''
+		return erb :visit
 	end
-
+	
 	f = File.open './public/users.txt', 'a'
 	f.write "name : #{@user_name}; phone : #{@user_phone}; date : #{@date_time} \nChoose barber is #{@choice_barber},\nColor : #{@color}"
 	f.close
