@@ -45,22 +45,20 @@ post '/visit' do
 	@choice_barber = params[:choice_barber]
 	@color = params[:color]
 
-	if @user_name == ''
-		@error = 'Enter your name'
+	hh = {:user_name => 'Ener your name', 
+		:user_phone => 'enter your phone', 
+		:date_time => 'Enter date and time'
+	}
+
+	# for every pair key value
+	
+	hh.each do |key, value|
+		# if params is empty then error 
+		if params[key] == ''
+			@error = hh[key]
 		
-	end
-
-	if @user_phone == ''
-		@error = "Enter number of phone"
-
-	end
-
-	if @date_time == ''
-		@error = "Enter date"
-	end
-
-	if @error != ''
-		return erb :visit
+		    return erb :visit
+		end
 	end
 
 	f = File.open './public/users.txt', 'a'
