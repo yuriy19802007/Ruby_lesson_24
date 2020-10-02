@@ -47,8 +47,22 @@ post '/visit' do
 
 	if @user_name == ''
 		@error = 'Enter your name'
+		
+	end
+
+	if @user_phone == ''
+		@error = "Enter number of phone"
+
+	end
+
+	if @date_time == ''
+		@error = "Enter date"
+	end
+
+	if @error != ''
 		return erb :visit
 	end
+
 	f = File.open './public/users.txt', 'a'
 	f.write "name : #{@user_name}; phone : #{@user_phone}; date : #{@date_time} \nChoose barber is #{@choice_barber},\nColor : #{@color}"
 	f.close
