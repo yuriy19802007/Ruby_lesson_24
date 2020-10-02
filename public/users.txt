@@ -4,4 +4,14 @@ name : ; phone : ; date :
 name : admin; phone : 096 297 55 33; date : 14.07 
 Choose barber is Walter Whitename : Jurij; phone : 096 297 55 33; date : 14.07 
 Choose barber is Walter White,
-Color : #a4bdfc
+Color : #a4bdfcname : ; phone : ; date :  
+Choose barber is Jassi Simpson,
+Color : #7bd148name : ; phone : ; date :  
+Choose barber is Jassi Simpson,
+Color : #7bd148name : ; phone : ; date :  
+Choose barber is Jassi Simpson,
+Color : #7bd148name : ; phone : ; date :  
+Choose barber is Jassi Simpson,
+Color : #7bd148name : ; phone : ; date :  
+Choose barber is Jassi Simpson,
+Color : #7bd148
